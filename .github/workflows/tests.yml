@@ -9,6 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+      BASE_URL: http://127.0.0.1:3000
+      ADMIN_USER: admin@escola.com
+      ADMIN_PASSWORD: admin123
 
     services:
       mongodb:
@@ -34,7 +39,19 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Iniciar API
+        run: npm start &
+
+      - name: Aguardar API responder
+        run: |
+          for tentativa in {1..30}; do
+            if curl --fail --silent --max-time 2 "$BASE_URL/"; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "A API não respondeu no tempo esperado."
+          exit 1
+
       - name: Executar testes
         run: npm test
-        env:
-          MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test

@@ -1,0 +1,30 @@
+[
+  {
+    "caso": "entrega com descrição",
+    "aluno": {
+      "nome": "Aluno Teste Matemática",
+      "email": "aluno.matematica",
+      "matricula": "MAT",
+      "senha": "123456"
+    },
+    "trabalho": {
+      "disciplinaId": "disciplina-matematica",
+      "titulo": "Lista de exercícios",
+      "descricao": "Resolução dos exercícios de matemática."
+    }
+  },
+  {
+    "caso": "entrega de exercícios de geometria",
+    "aluno": {
+      "nome": "Aluno Teste Geometria",
+      "email": "aluno.geometria",
+      "matricula": "GEO",
+      "senha": "123456"
+    },
+    "trabalho": {
+      "disciplinaId": "disciplina-matematica",
+      "titulo": "Exercícios de geometria",
+      "descricao": "Resolução dos exercícios de geometria."
+    }
+  }
+]

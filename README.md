@@ -217,6 +217,30 @@ para demonstração.
 | Bruno Lima    | História      | Linha do Tempo - Revolução Industrial     | corrigido (nota 8.0) |
 | Carla Mendes  | Programação Web | Landing Page Responsiva                 | entregue    |
 
+## Testes automatizados
+
+O projeto possui testes automatizados utilizando **Mocha, SuperTest e Chai**.
+
+O fluxo principal automatizado realiza:
+
+1. Login como administrador.
+2. Cadastro de um novo aluno.
+3. Matrícula do aluno em uma disciplina.
+4. Login com o aluno cadastrado.
+5. Registro da entrega de um trabalho pelo aluno.
+
+Os dados de teste estão no arquivo:
+
+`test/fixtures/entrega-trabalho.json`
+
+O fluxo utiliza Data-Driven Testing para executar o mesmo teste com diferentes dados.
+
+Para executar os testes:
+
+```bash
+npm test
+```
+
 ### Exemplos rápidos de uso
 
 ```bash
